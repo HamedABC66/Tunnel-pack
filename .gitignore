@@ -1,0 +1,25 @@
+# Build outputs
+/bin/
+/dist/
+/build/
+*.out
+
+# Go artifacts
+*.exe
+*.test
+*.prof
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa
+id_ed25519
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+.DS_Store
