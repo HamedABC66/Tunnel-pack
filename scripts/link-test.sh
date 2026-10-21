@@ -30,7 +30,7 @@ fi
 
 printf "\n-- TCP connection test --\n"
 if command -v timeout >/dev/null 2>&1; then
-  if timeout 4 bash -c ": >/dev/tcp/\"\$1\"/\"\$2\"" _ "$host" "$port" 2>/dev/null; then
+if timeout 4 bash -c 'exec 3<>/dev/tcp/$1/$2' _ "$host" "$port" 2>/dev/null; then
     echo "TCP connection succeeded to $host:$port"
   else
     echo "TCP connection failed to $host:$port (service/firewall/routing may block it)."
